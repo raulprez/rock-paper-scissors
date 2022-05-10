@@ -1,4 +1,4 @@
-let computerOptions = ["Rock", "Paper", "Scissors"]
+let computerOptions = ["rock", "paper", "scissors"]
 
 const computerPlay =  (computerOptions) => {
     // get random index value
@@ -8,14 +8,42 @@ const computerPlay =  (computerOptions) => {
     return choice;
 };
 
-// Log computer answers
-const computerChoice = computerPlay(computerOptions);
-console.log(computerChoice)
 //..................................................................
+// Helpful stack overflow question for passing button value onclick https://stackoverflow.com/questions/40134104/how-to-pass-the-button-value-into-my-onclick-event-function
 
-const humanChoice = "roCK"
+
+
+var i = 0;
+
+const play = (val) => {
+    var humanChoice = String(val);
+    console.log(humanChoice);
+    var computerChoice = computerPlay(computerOptions);
+    console.log(computerChoice);
+    console.log(playRound(computerChoice, humanChoice));
+    console.log("your score = " + userScore);
+    console.log("Computer's score = " + computerScore);
+    i++;
+    if (i !== 5) {
+        return;
+    } 
+    if (i == 5) {
+       if (userScore > computerScore) {
+       alert("Congratulations, you are the ultimate Rock, Paper, Scissors Champion!") 
+       }
+       else if (userScore == computerScore) {
+       alert("Are you a machine?")
+       }
+       else alert ("Better luck next time!")
+    }
+}
 
 //..................................................................
+// human and computer victory counter
+// victory conditions after 5 games
+
+let userScore = parseInt(0);
+let computerScore = parseInt(0);
 
 const playRound = (computerChoice, humanChoice) => {
 
@@ -23,20 +51,29 @@ const playRound = (computerChoice, humanChoice) => {
     const defeat = "You have failed to defeat the machine!"
     const tie = "You have tied the machine!"
 
-    if (computerChoice.toLowerCase() == "rock" && humanChoice.toLowerCase() == "paper")
-     return victory;
-    
-     if (computerChoice.toLowerCase() == "paper" && humanChoice.toLowerCase() == "scissors")
-     return victory;
+    if (computerChoice.toLowerCase() == "rock" && humanChoice.toLowerCase() == "paper") {
+        userScore++;
+        return victory;
+    }
+     
+    else if (computerChoice.toLowerCase() == "paper" && humanChoice.toLowerCase() == "scissors") {
+        userScore++;
+        return victory;
+    }
+     
+    else if (computerChoice.toLowerCase() == "scissors" && humanChoice.toLowerCase() == "rock") {
+        userScore++;
+        return victory;
+    }
 
-     if (computerChoice.toLowerCase() == "scissors" && humanChoice.toLowerCase() == "rock")
-     return victory;
+    else if (computerChoice.toLowerCase() === humanChoice.toLowerCase()) {
+        return tie;
 
-     if (computerChoice.toLowerCase() === humanChoice.toLowerCase())
-     return tie;
+     } else { 
 
-     else return defeat;
+     computerScore++;
+     return defeat;
+
+     }
 }
 
-const result = playRound(computerChoice, humanChoice);
-console.log(result)
