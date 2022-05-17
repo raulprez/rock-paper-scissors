@@ -19,20 +19,36 @@ const play = (val) => {
     var computerChoice = computerPlay(computerOptions);
     console.log(computerChoice);
     console.log(playRound(computerChoice, humanChoice));
-    console.log("your score = " + userScore);
-    console.log("Computer's score = " + computerScore);
+
+
+    let node1 = document.getElementById("userScore");
+    node1.innerHTML = userScore;
+    
+    let node2 = document.getElementById("computerScore");
+    node2.innerHTML = computerScore;
+
+
+
     i++;
     if (i !== 5) {
         return;
     } 
     if (i == 5) {
        if (userScore > computerScore) {
-       alert("Congratulations, you are the ultimate Rock, Paper, Scissors Champion!") 
+       const node = document.createElement('p');
+       node.innerHTML = "Congratulations, you are the ultimate Rock, Paper, Scissors Champion!";
+       document.body.appendChild(node);
        }
        else if (userScore == computerScore) {
-       alert("Are you a machine?")
+       const node = document.createElement('p');
+       node.innerHTML = "Are you a machine?";
+       document.body.appendChild(node);
        }
-       else alert ("Better luck next time!")
+       else {
+       const node = document.createElement('p');
+       node.innerHTML = "Better luck next time!";
+       document.body.appendChild(node);
+       }
     }
 }
 

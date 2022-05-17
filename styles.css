@@ -4,6 +4,10 @@
     border-color: red;
 } */
 
+* {
+    font-size: 2rem;
+}
+
 .items {
     width: 100px;
     height: auto;
@@ -19,4 +23,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.resultsItems {
+    font-size: 3rem;
+    padding: 6px;
+}
+
+.resultsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    font-size: 3rem;
 }
