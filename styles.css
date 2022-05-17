@@ -1,0 +1,22 @@
+/* * {
+    border: 2px;
+    border-style: solid;
+    border-color: red;
+} */
+
+.items {
+    width: 100px;
+    height: auto;
+    margin: 50px;
+    transition: 100ms;
+}
+
+.items:hover {
+    transform: scale(1.2);
+}
+
+.itemsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

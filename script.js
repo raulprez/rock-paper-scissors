@@ -11,8 +11,6 @@ const computerPlay =  (computerOptions) => {
 //..................................................................
 // Helpful stack overflow question for passing button value onclick https://stackoverflow.com/questions/40134104/how-to-pass-the-button-value-into-my-onclick-event-function
 
-
-
 var i = 0;
 
 const play = (val) => {
