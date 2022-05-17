@@ -17,8 +17,24 @@ const play = (val) => {
     var humanChoice = String(val);
     console.log(humanChoice);
     var computerChoice = computerPlay(computerOptions);
+
+
     console.log(computerChoice);
     console.log(playRound(computerChoice, humanChoice));
+
+    //Prints human choice in DOM
+    let humanGameLog = document.createElement("img");
+    humanGameLog.src = `img/${humanChoice}.png`;
+    humanGameLog.className = "items";
+    var humanLog = document.getElementById("humanGameLog");
+    humanLog.appendChild(humanGameLog);
+
+    //Prints computer choice in DOM
+    let computerGameLog = document.createElement("img");
+    computerGameLog.src = `img/${computerChoice}.png`;
+    computerGameLog.className = "items";
+    var computerLog = document.getElementById("computerGameLog");
+    computerLog.appendChild(computerGameLog);
 
 
     let node1 = document.getElementById("userScore");
@@ -37,16 +53,19 @@ const play = (val) => {
        if (userScore > computerScore) {
        const node = document.createElement('p');
        node.innerHTML = "Congratulations, you are the ultimate Rock, Paper, Scissors Champion!";
+       node.className = "matchLog";
        document.body.appendChild(node);
        }
        else if (userScore == computerScore) {
        const node = document.createElement('p');
        node.innerHTML = "Are you a machine?";
+       node.className = "matchLog";
        document.body.appendChild(node);
        }
        else {
        const node = document.createElement('p');
        node.innerHTML = "Better luck next time!";
+       node.className = "matchLog";
        document.body.appendChild(node);
        }
     }

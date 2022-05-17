@@ -14,22 +14,25 @@
 
     <div class="itemsWrapper">
         <div><img src="img/rock.png" alt="rock" class="items" onclick="play(this.alt)"></div>
-        <div><img src="img/scripture.png" alt="paper" class="items" onclick="play(this.alt)"></div>
+        <div><img src="img/paper.png" alt="paper" class="items" onclick="play(this.alt)"></div>
         <div><img src="img/scissors.png" alt="scissors" class="items" onclick="play(this.alt)"></div>
     </div>
     
     <div class="resultsWrapper">
-        <div class="resultsItems">
-            You: <span class="userScore" id="userScore">0</span>
-        </div>
-        <div class="resultsItems">
-            Machine: <span class="computerScore" id="computerScore">0</span>
-        </div>
-    </div>
-
-    <div id="matchLog">
+        
+            <div class="resultsItems">
+                You: <span class="userScore" id="userScore">0</span> <div class="columnWrapper"></div>
+            </div>
+            <div class="resultsItems">
+                Machine: <span class="computerScore" id="computerScore">0</span> <div class="columnWrapper"></div>
+            </div>
         
     </div>
+
+    <div id="humanGameLog"></div>
+    <div id="computerGameLog"></div>
+
+
     
 
 </body>

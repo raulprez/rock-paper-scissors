@@ -27,15 +27,29 @@
 
 .resultsItems {
     font-size: 3rem;
-    padding: 6px;
+    padding: 12px;
 }
 
 .resultsWrapper {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 100px;
 }
 
 .score {
     font-size: 3rem;
+}
+
+.columnWrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.matchLog {
+    margin: 12px;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
