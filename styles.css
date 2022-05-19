@@ -53,3 +53,31 @@
     align-items: center;
     justify-content: center;
 }
+
+.humanGameLog {
+    display: flex;
+    flex-direction: column;
+}
+
+.computerGameLog {
+    display: flex;
+    flex-direction: column;
+}
+
+.gameLogWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loser {
+    opacity: .5;
+    width: 50px;
+    height: auto;
+}
+
+.winner {
+    font-size: 1.5rem;
+    width: 100px;
+    height: auto;
+}
