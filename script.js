@@ -20,21 +20,39 @@ const play = (val) => {
 
 
     console.log(computerChoice);
-    console.log(playRound(computerChoice, humanChoice));
+    
 
+
+    if (playRound(computerChoice, humanChoice) === 'victory') {
+        let humanGameLog = document.createElement("img");
+        humanGameLog.src = `img/${humanChoice}.png`;
+        humanGameLog.className = "winner";
+        var humanLog = document.getElementById("humanGameLog");
+        humanLog.appendChild(humanGameLog);
+
+        let computerGameLog = document.createElement("img");
+        computerGameLog.src = `img/${computerChoice}.png`;
+        computerGameLog.className = "loser";
+        var computerLog = document.getElementById("computerGameLog");
+        computerLog.appendChild(computerGameLog);
+    } else {
+        let humanGameLog = document.createElement("img");
+        humanGameLog.src = `img/${humanChoice}.png`;
+        humanGameLog.className = "loser";
+        var humanLog = document.getElementById("humanGameLog");
+        humanLog.appendChild(humanGameLog);
+
+        let computerGameLog = document.createElement("img");
+        computerGameLog.src = `img/${computerChoice}.png`;
+        computerGameLog.className = "winner";
+        var computerLog = document.getElementById("computerGameLog");
+        computerLog.appendChild(computerGameLog);
+    }
     //Prints human choice in DOM
-    let humanGameLog = document.createElement("img");
-    humanGameLog.src = `img/${humanChoice}.png`;
-    humanGameLog.className = "items";
-    var humanLog = document.getElementById("humanGameLog");
-    humanLog.appendChild(humanGameLog);
+
 
     //Prints computer choice in DOM
-    let computerGameLog = document.createElement("img");
-    computerGameLog.src = `img/${computerChoice}.png`;
-    computerGameLog.className = "items";
-    var computerLog = document.getElementById("computerGameLog");
-    computerLog.appendChild(computerGameLog);
+
 
 
     let node1 = document.getElementById("userScore");
@@ -78,11 +96,11 @@ const play = (val) => {
 let userScore = parseInt(0);
 let computerScore = parseInt(0);
 
-const playRound = (computerChoice, humanChoice) => {
+var playRound = (computerChoice, humanChoice) => {
 
-    const victory = "Congratulations, you have beat the machine!"
-    const defeat = "You have failed to defeat the machine!"
-    const tie = "You have tied the machine!"
+    const victory = 'victory';
+    const defeat = 'defeat';
+    const tie = 'tie';
 
     if (computerChoice.toLowerCase() == "rock" && humanChoice.toLowerCase() == "paper") {
         userScore++;
