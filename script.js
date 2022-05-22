@@ -22,31 +22,60 @@ const play = (val) => {
     console.log(computerChoice);
     
 
-
-    if (playRound(computerChoice, humanChoice) === 'victory') {
+    //Add else if for tie condition
+    if (playRound(computerChoice, humanChoice) == 'victory') {
+        //Image for victory
         let humanGameLog = document.createElement("img");
         humanGameLog.src = `img/${humanChoice}.png`;
         humanGameLog.className = "winner";
         var humanLog = document.getElementById("humanGameLog");
-        humanLog.appendChild(humanGameLog);
+        humanLog.prepend(humanGameLog);
 
         let computerGameLog = document.createElement("img");
         computerGameLog.src = `img/${computerChoice}.png`;
         computerGameLog.className = "loser";
         var computerLog = document.getElementById("computerGameLog");
-        computerLog.appendChild(computerGameLog);
-    } else {
+        computerLog.prepend(computerGameLog);
+
+        //Victory Log
+        var roundLog = document.getElementById("roundLog");
+        roundLog.innerHTML = "You have bested the machine";
+
+        userScore++;
+
+    } if (playRound(computerChoice, humanChoice) == 'defeat')  {
         let humanGameLog = document.createElement("img");
         humanGameLog.src = `img/${humanChoice}.png`;
         humanGameLog.className = "loser";
         var humanLog = document.getElementById("humanGameLog");
-        humanLog.appendChild(humanGameLog);
+        humanLog.prepend(humanGameLog);
 
         let computerGameLog = document.createElement("img");
         computerGameLog.src = `img/${computerChoice}.png`;
         computerGameLog.className = "winner";
         var computerLog = document.getElementById("computerGameLog");
-        computerLog.appendChild(computerGameLog);
+        computerLog.prepend(computerGameLog);
+
+        var roundLog = document.getElementById("roundLog");
+        roundLog.innerHTML = "You have been defeated";
+
+        computerScore++;
+
+    } else if (playRound(computerChoice, humanChoice) == 'tie') {
+        let humanGameLog = document.createElement("img");
+        humanGameLog.src = `img/${humanChoice}.png`;
+        humanGameLog.className = "loser";
+        var humanLog = document.getElementById("humanGameLog");
+        humanLog.prepend(humanGameLog);
+
+        let computerGameLog = document.createElement("img");
+        computerGameLog.src = `img/${computerChoice}.png`;
+        computerGameLog.className = "loser";
+        var computerLog = document.getElementById("computerGameLog");
+        computerLog.prepend(computerGameLog);
+
+        var roundLog = document.getElementById("roundLog");
+        roundLog.innerHTML = "You have tied the machine";
     }
     //Prints human choice in DOM
 
@@ -103,17 +132,14 @@ var playRound = (computerChoice, humanChoice) => {
     const tie = 'tie';
 
     if (computerChoice.toLowerCase() == "rock" && humanChoice.toLowerCase() == "paper") {
-        userScore++;
         return victory;
     }
      
     else if (computerChoice.toLowerCase() == "paper" && humanChoice.toLowerCase() == "scissors") {
-        userScore++;
         return victory;
     }
      
     else if (computerChoice.toLowerCase() == "scissors" && humanChoice.toLowerCase() == "rock") {
-        userScore++;
         return victory;
     }
 
@@ -122,7 +148,6 @@ var playRound = (computerChoice, humanChoice) => {
 
      } else { 
 
-     computerScore++;
      return defeat;
 
      }

@@ -13,10 +13,12 @@
 <body>
 
     <div class="itemsWrapper">
-        <div><img src="img/rock.png" alt="rock" class="items" onclick="play(this.alt)"></div>
-        <div><img src="img/paper.png" alt="paper" class="items" onclick="play(this.alt)"></div>
-        <div><img src="img/scissors.png" alt="scissors" class="items" onclick="play(this.alt)"></div>
+        <div class="itemsObject"><img src="img/rock.png" alt="rock" class="items" onclick="play(this.alt)"></div>
+        <div class="itemsObject"><img src="img/paper.png" alt="paper" class="items" onclick="play(this.alt)"></div>
+        <div class="itemsObject"><img src="img/scissors.png" alt="scissors" class="items" onclick="play(this.alt)"></div>
     </div>
+
+    <div class="roundLog" id="roundLog">Will you defeat the machine?</div>
     
     <div class="resultsWrapper">
         
@@ -28,6 +30,9 @@
             </div>
         
     </div>
+
+
+
 
     <div class="gameLogWrapper">
         <div id="humanGameLog" class="humanGameLog"></div>

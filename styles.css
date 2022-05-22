@@ -6,17 +6,28 @@
 
 * {
     font-size: 2rem;
+    background-color: black;
+    font-family: Courier, Courier New;
+}
+
+.userScore {
+    color: #66FF66;
+}
+
+.computerScore {
+    color: #66FF66;
 }
 
 .items {
-    width: 100px;
+    width: 150px;
     height: auto;
     margin: 50px;
-    transition: 100ms;
+    transition: all 0.5s ease;
 }
 
 .items:hover {
-    transform: scale(1.2);
+    background-color: #11994c;
+    opacity:0.5;
 }
 
 .itemsWrapper {
@@ -25,9 +36,24 @@
     align-items: center;
 }
 
+.itemsObject {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.roundLog {
+    display: flex;
+    justify-content: center;
+    color: #66FF66;
+    padding: 16px;
+}
+
 .resultsItems {
     font-size: 3rem;
     padding: 12px;
+    color: #66FF66;
 }
 
 .resultsWrapper {
@@ -35,6 +61,7 @@
     justify-content: center;
     align-items: center;
     gap: 100px;
+    padding: 16px;
 }
 
 .score {
@@ -47,11 +74,10 @@
 }
 
 .matchLog {
-    margin: 12px;
-    font-size: 2rem;
     display: flex;
-    align-items: center;
     justify-content: center;
+    color: #66FF66;
+    padding: 16px;
 }
 
 .humanGameLog {
@@ -70,14 +96,20 @@
     align-items: center;
 }
 
+.gameLogWrapper img:first-child {
+    border: 2px;
+    border-style: solid;
+    border-color: #66FF66;
+  }
+
 .loser {
-    opacity: .5;
-    width: 50px;
+    opacity: .2;
+    width: 75px;
     height: auto;
 }
 
 .winner {
     font-size: 1.5rem;
-    width: 100px;
+    width: 75px;
     height: auto;
 }
