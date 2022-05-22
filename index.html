@@ -12,13 +12,13 @@
 </head>
 <body>
 
-    <div class="itemsWrapper">
-        <div class="itemsObject"><img src="img/rock.png" alt="rock" class="items" onclick="play(this.alt)"></div>
-        <div class="itemsObject"><img src="img/paper.png" alt="paper" class="items" onclick="play(this.alt)"></div>
-        <div class="itemsObject"><img src="img/scissors.png" alt="scissors" class="items" onclick="play(this.alt)"></div>
+    <div class="itemsWrapper" id="items">
+        <div id="items" class="itemsObject"><img src="img/rock.png" alt="rock" class="items" onclick="play(this.alt)"></div>
+        <div id="items" class="itemsObject"><img src="img/paper.png" alt="paper" class="items" onclick="play(this.alt)"></div>
+        <div id="items" class="itemsObject"><img src="img/scissors.png" alt="scissors" class="items" onclick="play(this.alt)"></div>
     </div>
 
-    <div class="roundLog" id="roundLog">Will you defeat the machine?</div>
+    <div class="roundLog" id="roundLog">Will you defeat the machine?<span class="cursor">&nbsp;</span></div>
     
     <div class="resultsWrapper">
         

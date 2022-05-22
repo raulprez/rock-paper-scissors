@@ -102,18 +102,21 @@ const play = (val) => {
        node.innerHTML = "Congratulations, you are the ultimate Rock, Paper, Scissors Champion!";
        node.className = "matchLog";
        document.body.appendChild(node);
+       GameOver(); 
        }
        else if (userScore == computerScore) {
        const node = document.createElement('p');
        node.innerHTML = "Are you a machine?";
        node.className = "matchLog";
        document.body.appendChild(node);
+       GameOver(); 
        }
        else {
        const node = document.createElement('p');
        node.innerHTML = "Better luck next time!";
        node.className = "matchLog";
        document.body.appendChild(node);
+       GameOver();
        }
     }
 }
@@ -153,3 +156,8 @@ var playRound = (computerChoice, humanChoice) => {
      }
 }
 
+// Reset global variables
+var GameOver = () => {
+    document.getElementById('items').style.display = 'none';
+    document.getElementById('roundLog').style.display = 'none';
+}
