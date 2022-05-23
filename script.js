@@ -1,3 +1,5 @@
+
+
 let computerOptions = ["rock", "paper", "scissors"]
 
 const computerPlay =  (computerOptions) => {
@@ -102,21 +104,21 @@ const play = (val) => {
        node.innerHTML = "Congratulations, you are the ultimate Rock, Paper, Scissors Champion!";
        node.className = "matchLog";
        document.body.appendChild(node);
-       GameOver(); 
+       gameOver(); 
        }
        else if (userScore == computerScore) {
        const node = document.createElement('p');
        node.innerHTML = "Are you a machine?";
        node.className = "matchLog";
        document.body.appendChild(node);
-       GameOver(); 
+       gameOver(); 
        }
        else {
        const node = document.createElement('p');
        node.innerHTML = "Better luck next time!";
        node.className = "matchLog";
        document.body.appendChild(node);
-       GameOver();
+       gameOver();
        }
     }
 }
@@ -157,7 +159,21 @@ var playRound = (computerChoice, humanChoice) => {
 }
 
 // Reset global variables
-var GameOver = () => {
+var gameOver = () => {
     document.getElementById('items').style.display = 'none';
     document.getElementById('roundLog').style.display = 'none';
+
+    const reset = document.createElement('button');
+    reset.innerHTML = "New Game";
+    reset.className = "resetButton";
+    reset.onclick = function(){
+        window.location.href=window.location.href;return false;
+      };
+    document.body.appendChild(reset);
+
+    //Div wrapper for button
+    var resetButtonWrapper = document.createElement('div');
+    resetButtonWrapper.className = "resetButtonWrapper";
+    reset.parentNode.insertBefore(resetButtonWrapper,reset);
+    resetButtonWrapper.appendChild(reset);
 }

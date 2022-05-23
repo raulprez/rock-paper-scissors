@@ -10,6 +10,15 @@
     font-family: Courier, Courier New;
 }
 
+.title {
+    font-size: 42px;
+    margin: 0;
+    text-align: center;
+    color: #66FF66;
+    padding: 12px;
+    margin-top: 10px;
+}
+
 .userScore {
     color: #66FF66;
 }
@@ -48,6 +57,7 @@
     justify-content: center;
     color: #66FF66;
     padding: 16px;
+    text-align: center;
 }
 
 
@@ -79,6 +89,7 @@
     justify-content: center;
     color: #66FF66;
     padding: 16px;
+    margin: 0;
 }
 
 .humanGameLog {
@@ -113,4 +124,22 @@
     font-size: 1.5rem;
     width: 75px;
     height: auto;
+}
+
+.gameOver {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.resetButtonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    
+}
+
+.resetButton {
+    
 }
