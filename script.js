@@ -41,7 +41,7 @@ const play = (val) => {
 
         //Victory Log
         var roundLog = document.getElementById("roundLog");
-        roundLog.innerHTML = "You have bested the machine";
+        roundLog.innerHTML = "You won!";
 
         userScore++;
 
@@ -77,7 +77,7 @@ const play = (val) => {
         computerLog.prepend(computerGameLog);
 
         var roundLog = document.getElementById("roundLog");
-        roundLog.innerHTML = "You have tied the machine";
+        roundLog.innerHTML = "You have tied";
     }
     //Prints human choice in DOM
 
@@ -108,14 +108,14 @@ const play = (val) => {
        }
        else if (userScore == computerScore) {
        const node = document.createElement('p');
-       node.innerHTML = "Are you a machine?";
+       node.innerHTML = "You have tied the machine";
        node.className = "matchLog";
        document.body.appendChild(node);
        gameOver(); 
        }
        else {
        const node = document.createElement('p');
-       node.innerHTML = "Better luck next time!";
+       node.innerHTML = "You have lost, better luck next time!";
        node.className = "matchLog";
        document.body.appendChild(node);
        gameOver();

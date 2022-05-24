@@ -141,5 +141,12 @@
 }
 
 .resetButton {
-    
+    color: #66FF66;
+    border-color: #66FF66;
+}
+
+.resetButton:hover {
+    background-color: #48be48;
+    color: black;
+    border-color:#48be48;
 }
