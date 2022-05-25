@@ -1,5 +1,3 @@
-
-
 let computerOptions = ["rock", "paper", "scissors"]
 
 const computerPlay =  (computerOptions) => {
@@ -10,126 +8,11 @@ const computerPlay =  (computerOptions) => {
     return choice;
 };
 
-//..................................................................
-// Helpful stack overflow question for passing button value onclick https://stackoverflow.com/questions/40134104/how-to-pass-the-button-value-into-my-onclick-event-function
-
-var i = 0;
-
-const play = (val) => {
-    var humanChoice = String(val);
-    console.log(humanChoice);
-    var computerChoice = computerPlay(computerOptions);
-
-
-    console.log(computerChoice);
-    
-
-    //Add else if for tie condition
-    if (playRound(computerChoice, humanChoice) == 'victory') {
-        //Image for victory
-        let humanGameLog = document.createElement("img");
-        humanGameLog.src = `img/${humanChoice}.png`;
-        humanGameLog.className = "winner";
-        var humanLog = document.getElementById("humanGameLog");
-        humanLog.prepend(humanGameLog);
-
-        let computerGameLog = document.createElement("img");
-        computerGameLog.src = `img/${computerChoice}.png`;
-        computerGameLog.className = "loser";
-        var computerLog = document.getElementById("computerGameLog");
-        computerLog.prepend(computerGameLog);
-
-        //Victory Log
-        var roundLog = document.getElementById("roundLog");
-        roundLog.innerHTML = "You won!";
-
-        userScore++;
-
-    } if (playRound(computerChoice, humanChoice) == 'defeat')  {
-        let humanGameLog = document.createElement("img");
-        humanGameLog.src = `img/${humanChoice}.png`;
-        humanGameLog.className = "loser";
-        var humanLog = document.getElementById("humanGameLog");
-        humanLog.prepend(humanGameLog);
-
-        let computerGameLog = document.createElement("img");
-        computerGameLog.src = `img/${computerChoice}.png`;
-        computerGameLog.className = "winner";
-        var computerLog = document.getElementById("computerGameLog");
-        computerLog.prepend(computerGameLog);
-
-        var roundLog = document.getElementById("roundLog");
-        roundLog.innerHTML = "You have been defeated";
-
-        computerScore++;
-
-    } else if (playRound(computerChoice, humanChoice) == 'tie') {
-        let humanGameLog = document.createElement("img");
-        humanGameLog.src = `img/${humanChoice}.png`;
-        humanGameLog.className = "loser";
-        var humanLog = document.getElementById("humanGameLog");
-        humanLog.prepend(humanGameLog);
-
-        let computerGameLog = document.createElement("img");
-        computerGameLog.src = `img/${computerChoice}.png`;
-        computerGameLog.className = "loser";
-        var computerLog = document.getElementById("computerGameLog");
-        computerLog.prepend(computerGameLog);
-
-        var roundLog = document.getElementById("roundLog");
-        roundLog.innerHTML = "You have tied";
-    }
-    //Prints human choice in DOM
-
-
-    //Prints computer choice in DOM
-
-
-
-    let node1 = document.getElementById("userScore");
-    node1.innerHTML = userScore;
-    
-    let node2 = document.getElementById("computerScore");
-    node2.innerHTML = computerScore;
-
-
-
-    i++;
-    if (i !== 5) {
-        return;
-    } 
-    if (i == 5) {
-       if (userScore > computerScore) {
-       const node = document.createElement('p');
-       node.innerHTML = "Congratulations, you are the ultimate Rock, Paper, Scissors Champion!";
-       node.className = "matchLog";
-       document.body.appendChild(node);
-       gameOver(); 
-       }
-       else if (userScore == computerScore) {
-       const node = document.createElement('p');
-       node.innerHTML = "You have tied the machine";
-       node.className = "matchLog";
-       document.body.appendChild(node);
-       gameOver(); 
-       }
-       else {
-       const node = document.createElement('p');
-       node.innerHTML = "You have lost, better luck next time!";
-       node.className = "matchLog";
-       document.body.appendChild(node);
-       gameOver();
-       }
-    }
-}
-
-//..................................................................
-// human and computer victory counter
-// victory conditions after 5 games
-
+//Initialize user and computer scores 
 let userScore = parseInt(0);
 let computerScore = parseInt(0);
 
+//Logic for defining winners and losers
 var playRound = (computerChoice, humanChoice) => {
 
     const victory = 'victory';
@@ -158,7 +41,118 @@ var playRound = (computerChoice, humanChoice) => {
      }
 }
 
-// Reset global variables
+//Number of rounds played initialized
+var i = 0;
+
+const play = (val) => {
+    var humanChoice = String(val);
+    var computerChoice = computerPlay(computerOptions);
+
+    if (playRound(computerChoice, humanChoice) == 'victory') {
+        //PNG for human victory
+        let humanGameLog = document.createElement("img");
+        humanGameLog.src = `img/${humanChoice}.png`;
+        humanGameLog.className = "winner";
+        var humanLog = document.getElementById("humanGameLog");
+        humanLog.prepend(humanGameLog);
+
+        //PNG for computer defeat
+        let computerGameLog = document.createElement("img");
+        computerGameLog.src = `img/${computerChoice}.png`;
+        computerGameLog.className = "loser";
+        var computerLog = document.getElementById("computerGameLog");
+        computerLog.prepend(computerGameLog);
+
+        //Victory Log
+        var roundLog = document.getElementById("roundLog");
+        roundLog.innerHTML = "You won!";
+
+        userScore++;
+
+    } if (playRound(computerChoice, humanChoice) == 'defeat')  {
+
+        //PNG for human defeat
+        let humanGameLog = document.createElement("img");
+        humanGameLog.src = `img/${humanChoice}.png`;
+        humanGameLog.className = "loser";
+        var humanLog = document.getElementById("humanGameLog");
+        humanLog.prepend(humanGameLog);
+
+        //PNG for computer victory
+        let computerGameLog = document.createElement("img");
+        computerGameLog.src = `img/${computerChoice}.png`;
+        computerGameLog.className = "winner";
+        var computerLog = document.getElementById("computerGameLog");
+        computerLog.prepend(computerGameLog);
+
+        //Round Log
+        var roundLog = document.getElementById("roundLog");
+        roundLog.innerHTML = "You have been defeated";
+
+        computerScore++;
+
+    } else if (playRound(computerChoice, humanChoice) == 'tie') {
+
+        //Tie makes both players PNG's as losers
+        let humanGameLog = document.createElement("img");
+        humanGameLog.src = `img/${humanChoice}.png`;
+        humanGameLog.className = "loser";
+        var humanLog = document.getElementById("humanGameLog");
+        humanLog.prepend(humanGameLog);
+
+        let computerGameLog = document.createElement("img");
+        computerGameLog.src = `img/${computerChoice}.png`;
+        computerGameLog.className = "loser";
+        var computerLog = document.getElementById("computerGameLog");
+        computerLog.prepend(computerGameLog);
+
+        //Round Log
+        var roundLog = document.getElementById("roundLog");
+        roundLog.innerHTML = "You have tied";
+    }
+
+    //Update user and computer score
+    let node1 = document.getElementById("userScore");
+    node1.innerHTML = userScore;
+    
+    let node2 = document.getElementById("computerScore");
+    node2.innerHTML = computerScore;
+
+    //Number of rounds played increase
+    i++;
+
+    //Makes sure that only 5 rounds are played
+    if (i !== 5) {
+        return;
+    } 
+    if (i == 5) {
+       if (userScore > computerScore) {
+       const node = document.createElement('p');
+       node.innerHTML = "Congratulations, you are the ultimate Rock, Paper, Scissors Champion!";
+       node.className = "matchLog";
+       document.body.appendChild(node);
+       gameOver(); 
+       }
+
+       else if (userScore == computerScore) {
+       const node = document.createElement('p');
+       node.innerHTML = "You have tied the machine";
+       node.className = "matchLog";
+       document.body.appendChild(node);
+       gameOver(); 
+       }
+
+       else {
+       const node = document.createElement('p');
+       node.innerHTML = "You have lost, better luck next time!";
+       node.className = "matchLog";
+       document.body.appendChild(node);
+       gameOver();
+       }
+    }
+}
+
+// Function that hides inputs and displays a reset button
 var gameOver = () => {
     document.getElementById('items').style.display = 'none';
     document.getElementById('roundLog').style.display = 'none';
@@ -177,3 +171,5 @@ var gameOver = () => {
     reset.parentNode.insertBefore(resetButtonWrapper,reset);
     resetButtonWrapper.appendChild(reset);
 }
+
+// Helpful stack overflow question for passing button value onclick https://stackoverflow.com/questions/40134104/how-to-pass-the-button-value-into-my-onclick-event-function

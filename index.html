@@ -8,12 +8,12 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-    
 </head>
 <body>
-
+    
     <div><p class="title">Rock, Paper, Scissors</p></div>
 
+    <!-- Rock, paper, scissors icons -->
     <div class="itemsWrapper" id="items">
         <div id="items" class="itemsObject"><img src="img/rock.png" alt="rock" class="items" onclick="play(this.alt)"></div>
         <div id="items" class="itemsObject"><img src="img/paper.png" alt="paper" class="items" onclick="play(this.alt)"></div>
@@ -22,17 +22,17 @@
 
     <div class="roundLog" id="roundLog">Will you defeat the machine?<span class="cursor">&nbsp;</span></div>
     
+    <!-- Score keeper  -->
     <div class="resultsWrapper">
-        
             <div class="resultsItems">
                 You: <span class="userScore" id="userScore">0</span> <div class="columnWrapper"></div>
             </div>
             <div class="resultsItems">
                 Machine: <span class="computerScore" id="computerScore">0</span> <div class="columnWrapper"></div>
             </div>
-        
     </div>
 
+    <!-- Log of user and computer options -->
     <div class="gameLogWrapper">
         <div id="humanGameLog" class="humanGameLog"></div>
         <div id="computerGameLog" class="humanGameLog"></div>

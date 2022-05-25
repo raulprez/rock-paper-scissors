@@ -19,13 +19,7 @@
     margin-top: 10px;
 }
 
-.userScore {
-    color: #66FF66;
-}
-
-.computerScore {
-    color: #66FF66;
-}
+/* Icons */
 
 .items {
     width: 150px;
@@ -52,6 +46,18 @@
     align-items: center;
 }
 
+/* Score keeper */
+
+.userScore {
+    color: #66FF66;
+}
+
+.computerScore {
+    color: #66FF66;
+}
+
+/* Lets player know if won or lost via text styling */
+
 .roundLog {
     display: flex;
     justify-content: center;
@@ -60,6 +66,7 @@
     text-align: center;
 }
 
+/* Log of icons played by both players */
 
 .resultsItems {
     font-size: 3rem;
@@ -108,6 +115,8 @@
     align-items: center;
 }
 
+/* Winner and loser log styling */
+
 .loser {
     opacity: .2;
     width: 75px;
@@ -120,11 +129,7 @@
     height: auto;
 }
 
-.gameOver {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-}
+/* Reset Button */
 
 .resetButtonWrapper {
     display: flex;
