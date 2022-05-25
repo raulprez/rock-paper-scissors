@@ -1,6 +1,6 @@
 let computerOptions = ["rock", "paper", "scissors"]
 
-const computerPlay =  (computerOptions) => {
+let computerPlay =  (computerOptions) => {
     // get random index value
     const randomIndex = Math.floor(Math.random() * computerOptions.length); 
     // get random choice
@@ -13,7 +13,7 @@ let userScore = parseInt(0);
 let computerScore = parseInt(0);
 
 //Logic for defining winners and losers
-var playRound = (computerChoice, humanChoice) => {
+let playRound = (computerChoice, humanChoice) => {
 
     const victory = 'victory';
     const defeat = 'defeat';
@@ -42,29 +42,29 @@ var playRound = (computerChoice, humanChoice) => {
 }
 
 //Number of rounds played initialized
-var i = 0;
+let i = 0;
 
 const play = (val) => {
-    var humanChoice = String(val);
-    var computerChoice = computerPlay(computerOptions);
+    let humanChoice = String(val);
+    let computerChoice = computerPlay(computerOptions);
 
     if (playRound(computerChoice, humanChoice) == 'victory') {
         //PNG for human victory
         let humanGameLog = document.createElement("img");
         humanGameLog.src = `img/${humanChoice}.png`;
         humanGameLog.className = "winner";
-        var humanLog = document.getElementById("humanGameLog");
+        let humanLog = document.getElementById("humanGameLog");
         humanLog.prepend(humanGameLog);
 
         //PNG for computer defeat
         let computerGameLog = document.createElement("img");
         computerGameLog.src = `img/${computerChoice}.png`;
         computerGameLog.className = "loser";
-        var computerLog = document.getElementById("computerGameLog");
+        let computerLog = document.getElementById("computerGameLog");
         computerLog.prepend(computerGameLog);
 
         //Victory Log
-        var roundLog = document.getElementById("roundLog");
+        let roundLog = document.getElementById("roundLog");
         roundLog.innerHTML = "You won!";
 
         userScore++;
@@ -75,18 +75,18 @@ const play = (val) => {
         let humanGameLog = document.createElement("img");
         humanGameLog.src = `img/${humanChoice}.png`;
         humanGameLog.className = "loser";
-        var humanLog = document.getElementById("humanGameLog");
+        let humanLog = document.getElementById("humanGameLog");
         humanLog.prepend(humanGameLog);
 
         //PNG for computer victory
         let computerGameLog = document.createElement("img");
         computerGameLog.src = `img/${computerChoice}.png`;
         computerGameLog.className = "winner";
-        var computerLog = document.getElementById("computerGameLog");
+        let computerLog = document.getElementById("computerGameLog");
         computerLog.prepend(computerGameLog);
 
         //Round Log
-        var roundLog = document.getElementById("roundLog");
+        let roundLog = document.getElementById("roundLog");
         roundLog.innerHTML = "You have been defeated";
 
         computerScore++;
@@ -97,17 +97,17 @@ const play = (val) => {
         let humanGameLog = document.createElement("img");
         humanGameLog.src = `img/${humanChoice}.png`;
         humanGameLog.className = "loser";
-        var humanLog = document.getElementById("humanGameLog");
+        let humanLog = document.getElementById("humanGameLog");
         humanLog.prepend(humanGameLog);
 
         let computerGameLog = document.createElement("img");
         computerGameLog.src = `img/${computerChoice}.png`;
         computerGameLog.className = "loser";
-        var computerLog = document.getElementById("computerGameLog");
+        let computerLog = document.getElementById("computerGameLog");
         computerLog.prepend(computerGameLog);
 
         //Round Log
-        var roundLog = document.getElementById("roundLog");
+        let roundLog = document.getElementById("roundLog");
         roundLog.innerHTML = "You have tied";
     }
 
@@ -153,7 +153,7 @@ const play = (val) => {
 }
 
 // Function that hides inputs and displays a reset button
-var gameOver = () => {
+let gameOver = () => {
     document.getElementById('items').style.display = 'none';
     document.getElementById('roundLog').style.display = 'none';
 
@@ -166,7 +166,7 @@ var gameOver = () => {
     document.body.appendChild(reset);
 
     //Div wrapper for button
-    var resetButtonWrapper = document.createElement('div');
+    let resetButtonWrapper = document.createElement('div');
     resetButtonWrapper.className = "resetButtonWrapper";
     reset.parentNode.insertBefore(resetButtonWrapper,reset);
     resetButtonWrapper.appendChild(reset);
